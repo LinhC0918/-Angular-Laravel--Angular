@@ -1,0 +1,36 @@
+<!--The whole content below can be removed with the new code.-->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <h1>{{title}}</h1>
+
+      <!-- Table to output data -->
+      <button [routerLink]="['/tasks/create']" class="btn btn-success" >Create</button>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>TITLE</th>
+          <th>CONTENT</th>
+          <th>DUE_DATE</th>
+          <th>IMAGE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{ task.id }}</td>
+          <td>{{ task.title }}</td>
+          <td>{{ task.content }}</td>
+          <td>{{ task.due_date }}</td>
+          <td><img src="{{ task.image }}"></td>
+          <td>
+            <button (click)="deleteTask(task.id)" class="btn btn-danger">Delete</button>
+            <!--<button (click)="showProduct(task.id)" class="btn btn-primary">Edit</button>-->
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
